@@ -21,14 +21,14 @@ const store = createStore(reducers,middleware);
 //   console.log("state is ",store.getState());
 // })
 
-const AddExpensePage = () =>
+const AddExpensePage = ()=>
   (
     <div>Hi comp</div>
   )
 
   const CheckingPage = ()=>
     (
-      <div>Hello AbhishekGupta </div>
+      <div>Hi djfkjdfkdjkfjskdfjksd</div>
     )
 
 const Routes = (
@@ -48,8 +48,8 @@ const Routes = (
   <Provider store = {store}>
     <BrowserRouter>
       <div>
-        <Route exact path = "/" component = {AddExpensePage}/>
-        <Route exact path = "/creates" component = {CheckingPage}/>
+        <Route path = "/" component = {AddExpensePage}/>
+        <Route path = "/creates" component = {CheckingPage}/>
       </div>
 
   </BrowserRouter>

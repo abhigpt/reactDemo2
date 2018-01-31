@@ -23,12 +23,12 @@ const store = createStore(reducers,middleware);
 
 const AddExpensePage = ()=>
   (
-    <div>Hi comp</div>
+    <div> Hello this is the default world  </div>
   )
 
   const CheckingPage = ()=>
     (
-      <div>Hi djfkjdfkdjkfjskdfjksd</div>
+      <div> Welcome Abhishek in the reactWorld </div>
     )
 
 const Routes = (
@@ -48,8 +48,8 @@ const Routes = (
   <Provider store = {store}>
     <BrowserRouter>
       <div>
-        <Route path = "/" component = {AddExpensePage}/>
-        <Route path = "/creates" component = {CheckingPage}/>
+        <Route exact path = "/" component = {AddExpensePage}/>
+        <Route exact path = "/creates" component = {CheckingPage}/>
       </div>
 
   </BrowserRouter>

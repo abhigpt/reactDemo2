@@ -2,7 +2,12 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {Provider} from 'react-redux';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 //import {Router} from 'react-router';
+
+import Home from './components/pages/home';
+import About from './components/pages/about';
+import Users from './components/pages/users';
 import {applyMiddleware,createStore} from 'redux';
 import logger from 'redux-logger';
 import reducers from './reducers/index';
@@ -32,29 +37,27 @@ const AddExpensePage = ()=>
     )
 
 const Routes = (
-  // <Provider store={store}>
-  //     <BrowserRouter>
-  //       <div>
-  //       <Menu />
-  //       <Switch>
-  //           <Route exact path="/" component={BooksList}/>
-  //           <Route path = "/create" component={AddExpensePage}/>
-  //           <Route path="/admin" component={BooksForm}/>
-  //           <Route path="/cart" component={Cart}/>
-  //       </Switch>
-  //       </div>
-  //     </BrowserRouter>
-  // </Provider>
-  <Provider store = {store}>
-    <BrowserRouter>
-      <div>
-        <Route exact path = "/" component = {AddExpensePage}/>
-        <Route exact path = "/creates" component = {CheckingPage}/>
+  <Provider store={store}>
+    <MuiThemeProvider>
+      <BrowserRouter>
+        <div>
+        <Menu />
+        <div style={{margin: '0 100px 0 400px'}}>
+        <Switch >
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/about" component={About}/>
+            <Route exact path="/users" component={Users}/>
+        </Switch>
       </div>
+        </div>
+      </BrowserRouter>
+    </MuiThemeProvider>
 
-  </BrowserRouter>
-</Provider>
+  </Provider>
+
 )
+
+
 
 render(
   Routes, document.getElementById('app')
